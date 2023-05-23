@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">taskmaster</string>
+    <string name="main_activity_image">placeholder image</string>
+    <string name="my_task_icon">text description</string>
+    <string name="main_activity_add_task_button">Add Task</string>
+    <string name="main_activity_all_task_button">All Task</string>
+    <string name="submitted_confirmation">Submitted!</string>
+    <string name="activity_all_task_image">placeholder image</string>
+    <string name="all_task_icon">text description</string>
+    <string name="add_task_icon">text description</string>
+    <string name="activity_add_task_title">task title</string>
+    <string name="activity_add_task_description">text description</string>
+    <string name="activity_add_task_button">add task button</string>
+    <string name="activty_total_task_counter">total tasks</string>
+</resources>

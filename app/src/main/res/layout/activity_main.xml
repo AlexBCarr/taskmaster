@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="136dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="108dp"
+        android:contentDescription="@string/my_task_icon"
+        android:text="@string/my_task_icon"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.115"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="TextSizeCheck"
+        tools:text="My Tasks" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="305dp"
+        android:layout_height="304dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="195dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="232dp"
+        android:contentDescription="@string/main_activity_image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_launcher_background"
+        tools:ignore="ImageContrastCheck" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="133dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="132dp"
+        android:text="@string/main_activity_add_task_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="1.0"
+        tools:text="Add Task" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="133dp"
+        android:layout_height="58dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="132dp"
+        android:text="@string/main_activity_all_task_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="1.0"
+        tools:text="All Tasks" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
