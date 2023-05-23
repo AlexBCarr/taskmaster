@@ -57,7 +57,11 @@ public class MainActivity extends AppCompatActivity {
                     Log.e(TAG, "we caught a runtime exception", re);
                 }
 
+<<<<<<< HEAD
                 ((TextView) findViewById(R.id.addTaskActivitySubmittedTextView)).setText(R.string.submitted_confirmation);
+=======
+                ((TextView) findViewById(R.id.mainActivitySubmittedTextView)).setText(R.string.submitted_confirmation);
+>>>>>>> 574ecd50cf8a08b18a9e6e52d3fab5c6afcc4797
             }
         });
 

@@ -88,6 +88,7 @@
         tools:text="Total Task: 0" />
 
     <TextView
+<<<<<<< HEAD
         android:id="@+id/addTaskActivitySubmittedTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -101,4 +102,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5"
         tools:text="Submitted!" />
+=======
+        android:id="@+id/mainActivitySubmittedTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="67dp"
+        android:layout_marginEnd="122dp"
+        android:layout_marginBottom="264dp"
+        android:text="Submitted!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/activityAddTaskButton"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+>>>>>>> 574ecd50cf8a08b18a9e6e52d3fab5c6afcc4797
 </androidx.constraintlayout.widget.ConstraintLayout>
