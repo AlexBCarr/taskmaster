@@ -46,7 +46,7 @@
         android:layout_marginEnd="8dp"
         android:contentDescription="@string/activity_add_task_description"
         android:text="@string/activity_add_task_description"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
+        app:layout_constraintBottom_toTopOf="@+id/activityAddTaskButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -54,7 +54,7 @@
         tools:text="Task Description" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/activityAddTaskButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="22dp"
@@ -84,6 +84,21 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3"
+        app:layout_constraintTop_toBottomOf="@+id/activityAddTaskButton"
         tools:text="Total Task: 0" />
+
+    <TextView
+        android:id="@+id/addTaskActivitySubmittedTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="270dp"
+        android:layout_marginTop="138dp"
+        android:layout_marginEnd="83dp"
+        android:layout_marginBottom="193dp"
+        android:text="@string/submitted_confirmation"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        tools:text="Submitted!" />
 </androidx.constraintlayout.widget.ConstraintLayout>
