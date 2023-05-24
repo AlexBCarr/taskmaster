@@ -1,15 +1,23 @@
 <resources>
-    <string name="app_name">taskmaster</string>
-    <string name="main_activity_image">placeholder image</string>
-    <string name="my_task_icon">text description</string>
-    <string name="main_activity_add_task_button">Add Task</string>
-    <string name="main_activity_all_task_button">All Task</string>
-    <string name="submitted_confirmation">Submitted!</string>
-    <string name="activity_all_task_image">placeholder image</string>
-    <string name="all_task_icon">text description</string>
-    <string name="add_task_icon">text description</string>
-    <string name="activity_add_task_title">task title</string>
-    <string name="activity_add_task_description">text description</string>
-    <string name="activity_add_task_button">add task button</string>
-    <string name="activty_total_task_counter">total tasks</string>
+
+    <string name="app_name">TaskMaster</string>
+    <string name="my_tasks">My Tasks</string>
+    <string name="my_tasks_image">my tasks image</string>
+    <string name="add_task">Add Task</string>
+    <string name="all_tasks">All Tasks</string>
+    <string name="do_something">Do something</string>
+    <string name="task_description">Task Description</string>
+    <string name="my_task">My Task</string>
+    <string name="total_tasks_0">Total tasks: 0</string>
+    <string name="task_title">Task Title</string>
+    <string name="submitted_confirmation">Task Submitted!</string>
+    <string name="task_one_button_text">Football</string>
+    <string name="task_two_button_text">Basketball</string>
+    <string name="task_three_button_text">Training</string>
+    <string name="settings_title">Settings</string>
+    <string name="username_edit_text">Enter Username</string>
+    <string name="save_settings_button_text">Save</string>
+    <string name="settings_button">Settings</string>
+    <string name="task_detail_title">Task Title</string>
+    <string name="task_detail_text_view">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
 </resources>
