@@ -4,36 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.AllTaskActivity">
+    tools:context=".activities.AllTasksActivity">
 
     <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="263dp"
-        android:layout_height="354dp"
-        android:layout_marginBottom="144dp"
-        android:contentDescription="@string/activity_all_task_image"
+        android:id="@+id/all_tasks_imageView"
+        android:layout_width="280dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="64dp"
+        android:contentDescription="@string/my_tasks_image"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/ic_launcher_background"
-        tools:ignore="ImageContrastCheck" />
+        app:layout_constraintStart_toStartOf="@+id/all_tasks_title"
+        app:layout_constraintTop_toBottomOf="@+id/all_tasks_title"
+        app:srcCompat="@android:mipmap/sym_def_app_icon" />
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="132dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="74dp"
-        android:layout_marginTop="140dp"
-        android:layout_marginEnd="205dp"
-        android:layout_marginBottom="16dp"
-        android:contentDescription="@string/all_task_icon"
-        android:text="@string/all_task_icon"
-        app:layout_constraintBottom_toTopOf="@+id/imageView4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        android:id="@+id/all_tasks_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="64dp"
+        android:text="@string/all_tasks"
+        android:textSize="34sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="All Tasks" />
-
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
