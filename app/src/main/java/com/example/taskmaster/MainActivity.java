@@ -1,26 +1,38 @@
 package com.example.taskmaster;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.room.Room;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.taskmaster.activities.AddTaskActivity;
 import com.example.taskmaster.activities.AllTaskActivity;
 import com.example.taskmaster.activities.SettingsActivity;
-import com.example.taskmaster.activities.TaskDetailActivity;
+import com.example.taskmaster.adapter.TaskListRecyclerViewAdapter;
+import com.example.taskmaster.database.TaskmasterDatabase;
+import com.example.taskmaster.models.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
     public static final String TASK_NAME_EXTRAS_TAG = "taskName";
-
+    public static final String TASK_STATUS_EXTRAS_TAG = "taskStatus";
+    public static final String TASK_DESCRIPTION_EXTRAS_TAG = "taskDescription";
+    public static final String DATABASE_NAME = "example-taskmaster";
+    List<Task> tasks = new ArrayList<>();
+    TaskListRecyclerViewAdapter taskListRecyclerViewAdapter;
+    TaskmasterDatabase taskmasterDatabase;
     SharedPreferences preferences;
 
     @Override
@@ -28,8 +40,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        setupTasksFromDatabase();
         setupSettingsButton();
-        setupTaskButtons();
+        setupRecyclerView();
         setupAddTaskButton();
         setupAllTasksButton();
     }
@@ -45,6 +58,20 @@ public class MainActivity extends AppCompatActivity {
             String myTasksTitleTextView = username + "'s Tasks";
             ((TextView) findViewById(R.id.my_tasks_title)).setText(myTasksTitleTextView);
         }
+
+        setupTasksFromDatabase();
+        taskListRecyclerViewAdapter.updateTasksData(tasks);
+    }
+
+    public void setupTasksFromDatabase() {
+        taskmasterDatabase = Room.databaseBuilder(
+                        getApplicationContext(),
+                        TaskmasterDatabase.class,
+                        DATABASE_NAME)
+                .allowMainThreadQueries()
+                .build();
+        tasks = taskmasterDatabase.taskDao().findAll();
+
     }
 
     public void setupSettingsButton() {
@@ -54,24 +81,15 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void setupTaskButtons() {
-        Button taskOneButton = findViewById(R.id.button_main_activity_task_one);
-        setupTaskButton(taskOneButton);
-        Button taskTwoButton = findViewById(R.id.button_main_activity_task_two);
-        setupTaskButton(taskTwoButton);
-        Button taskThreeButton = findViewById(R.id.button_main_activity_task_three);
-        setupTaskButton(taskThreeButton);
+    public void setupRecyclerView() {
+        RecyclerView taskListRecyclerView = (RecyclerView) findViewById(R.id.mainActivityTaskListRecyclerView);
 
-    }
+        RecyclerView.LayoutManager taskListLayoutManager = new LinearLayoutManager(this);
+        taskListRecyclerView.setLayoutManager(taskListLayoutManager);
 
-    public void setupTaskButton(Button goToTaskButton) {
-        goToTaskButton.setOnClickListener(v -> {
-            Intent goToTaskIntent = new Intent(MainActivity.this, TaskDetailActivity.class);
-            String taskName = goToTaskButton.getText().toString();
-            goToTaskIntent.putExtra(TASK_NAME_EXTRAS_TAG, taskName);
+        taskListRecyclerViewAdapter = new TaskListRecyclerViewAdapter(tasks, this);
+        taskListRecyclerView.setAdapter(taskListRecyclerViewAdapter);
 
-            startActivity(goToTaskIntent);
-        });
     }
 
     public void setupAddTaskButton() {
