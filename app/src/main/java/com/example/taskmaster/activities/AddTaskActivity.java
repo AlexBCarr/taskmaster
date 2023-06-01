@@ -1,7 +1,7 @@
 package com.example.taskmaster.activities;
 
 
-import static com.example.taskmaster.MainActivity.DATABASE_NAME;
+
 
 
 import android.os.Bundle;
@@ -13,28 +13,23 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.room.Room;
+
 
 
 import com.example.taskmaster.R;
-import com.example.taskmaster.database.TaskmasterDatabase;
+
 import com.example.taskmaster.models.Task;
 import com.example.taskmaster.models.TaskStatus;
 
 public class AddTaskActivity extends AppCompatActivity {
-    TaskmasterDatabase taskmasterDatabase;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_task);
 
-        taskmasterDatabase = Room.databaseBuilder(
-                        getApplicationContext(),
-                        TaskmasterDatabase.class,
-                        DATABASE_NAME)
-                .allowMainThreadQueries()
-                .build();
+
 
         Spinner taskStatusSpinner = findViewById(R.id.spinner_add_task_status);
         taskStatusSpinner.setAdapter(new ArrayAdapter<>(
@@ -55,7 +50,7 @@ public class AddTaskActivity extends AppCompatActivity {
                     TaskStatus.fromString(taskStatusSpinner.getSelectedItem().toString())
             );
 
-            taskmasterDatabase.taskDao().insertTask(newTask);
+
             ((EditText)findViewById(R.id.my_task_input)).setText("");
             ((EditText)findViewById(R.id.task_description_input)).setText("");
             taskStatusSpinner.setSelection(0);
