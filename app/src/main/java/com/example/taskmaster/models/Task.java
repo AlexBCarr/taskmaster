@@ -4,9 +4,9 @@ package com.example.taskmaster.models;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity
+
 public class Task {
-    @PrimaryKey(autoGenerate = true)
+
     public long id;
     private String title;
     private String body;
