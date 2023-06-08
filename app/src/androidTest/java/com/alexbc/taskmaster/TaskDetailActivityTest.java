@@ -18,7 +18,6 @@ import android.view.ViewGroup;
 import android.view.ViewParent;
 
 import androidx.test.espresso.ViewInteraction;
-import androidx.test.espresso.matcher.ViewMatchers;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.LargeTest;
@@ -27,7 +26,6 @@ import com.example.taskmaster.R;
 
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
-import org.hamcrest.Matchers;
 import org.hamcrest.TypeSafeMatcher;
 import org.junit.Rule;
 import org.junit.Test;
@@ -44,7 +42,7 @@ public class TaskDetailActivityTest {
     @Test
     public void taskDetailActivityTest() {
         ViewInteraction materialButton = onView(
-                Matchers.allOf(ViewMatchers.withId(R.id.button_main_activity_add_task), withText("Add Task"),
+                allOf(withId(R.id.button_main_activity_add_task), withText("Add Task"),
                         childAtPosition(
                                 allOf(withId(R.id.my_tasks_image),
                                         childAtPosition(

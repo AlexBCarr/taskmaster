@@ -1,21 +1,22 @@
 package com.alexbc.taskmaster.activities;
 
-
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.taskmaster.R;
 
-
 public class SettingsActivity extends AppCompatActivity {
     public static final String USERNAME_TAG = "username";
-
+    public static final String TEAM_TAG = "team";
+    public static final String TAG = "settings_activity";
+    Spinner taskTeamSpinner = null;
     SharedPreferences preferences;
 
     @Override
@@ -26,6 +27,7 @@ public class SettingsActivity extends AppCompatActivity {
         preferences = PreferenceManager.getDefaultSharedPreferences(this);
 
         populateUsernameEditText(preferences);
+//        populateTeamSpinner(preferences);
         setupSaveButton(preferences);
     }
 
@@ -33,6 +35,38 @@ public class SettingsActivity extends AppCompatActivity {
         String username = preferences.getString(USERNAME_TAG, "");
         ((EditText) findViewById(R.id.usernameEditText)).setText(username);
     }
+//
+//    public void populateTeamSpinner(SharedPreferences preferences) {
+//        String teamString = preferences.getString(TEAM_TAG, "");
+//        CompletableFuture<List<Team>> teamsFuture = new CompletableFuture<>();
+//        List<Team> teamList = new ArrayList<>();
+//        List<String> teamListAsString = new ArrayList<>();
+//        taskTeamSpinner = findViewById(R.id.spinner_settings_team);
+//        Amplify.API.query(
+//                ModelQuery.list(Team.class),
+//                success -> {
+//                    Log.i(TAG, "Read Teams successfully");
+//                    for (Team team : success.getData()) {
+//                        teamList.add(team);
+//                    }
+//                    teamsFuture.complete(teamList);
+//                    runOnUiThread(() -> {
+//                        teamListAsString.add("All");
+//                        for (Team team : teamList)
+//                            teamListAsString.add(team.getName());
+//                        taskTeamSpinner.setAdapter(new ArrayAdapter<>(
+//                                this,
+//                                android.R.layout.simple_spinner_item,
+//                                teamListAsString
+//                        ));
+//                        if (!teamString.isEmpty()) {
+//                            taskTeamSpinner.setSelection(teamListAsString.indexOf(teamString));
+//                        }
+//                    });
+//                },
+//                failure -> Log.i(TAG, "Failed to read Teams")
+//        );
+//    }
 
     public void setupSaveButton(SharedPreferences preferences) {
         Button saveButton = findViewById(R.id.button_settings_activity_save);
@@ -43,9 +77,11 @@ public class SettingsActivity extends AppCompatActivity {
             // grabbing the string we want to save from the user input
             EditText usernameEditText = findViewById(R.id.usernameEditText);
             String usernameString = usernameEditText.getText().toString();
+            String teamString = taskTeamSpinner.getSelectedItem().toString();
 
             // save the string to shared preferences
             preferenceEditor.putString(USERNAME_TAG, usernameString);
+            preferenceEditor.putString(TEAM_TAG, teamString);
             preferenceEditor.apply(); // Nothing will happen if you don't do this!
 
             Toast.makeText(SettingsActivity.this, "Settings saved!", Toast.LENGTH_SHORT).show();

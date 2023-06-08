@@ -1,9 +1,6 @@
 package com.alexbc.taskmaster.models;
 
-
 public class Task {
-
-    public long id;
     private String title;
     private String body;
     private TaskStatus status;

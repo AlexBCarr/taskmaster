@@ -1,6 +1,5 @@
 package com.alexbc.taskmaster.adapter;
 
-
 import static com.alexbc.taskmaster.MainActivity.TASK_DESCRIPTION_EXTRAS_TAG;
 import static com.alexbc.taskmaster.MainActivity.TASK_NAME_EXTRAS_TAG;
 import static com.alexbc.taskmaster.MainActivity.TASK_STATUS_EXTRAS_TAG;
@@ -17,9 +16,9 @@ import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.taskmaster.R;
 import com.alexbc.taskmaster.activities.TaskDetailActivity;
 import com.alexbc.taskmaster.models.Task;
+import com.example.taskmaster.R;
 
 
 import java.util.List;

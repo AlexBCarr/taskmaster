@@ -1,6 +1,7 @@
 package com.alexbc.taskmaster;
 
 
+
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.Espresso.pressBack;
 import static androidx.test.espresso.action.ViewActions.click;
@@ -19,7 +20,6 @@ import android.view.ViewGroup;
 import android.view.ViewParent;
 
 import androidx.test.espresso.ViewInteraction;
-import androidx.test.espresso.matcher.ViewMatchers;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.LargeTest;
@@ -28,7 +28,6 @@ import com.example.taskmaster.R;
 
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
-import org.hamcrest.Matchers;
 import org.hamcrest.TypeSafeMatcher;
 import org.junit.Rule;
 import org.junit.Test;
@@ -45,7 +44,7 @@ public class MainActivityTest {
     @Test
     public void mainActivityTest() {
         ViewInteraction floatingActionButton = onView(
-                Matchers.allOf(ViewMatchers.withId(R.id.settingsButton), withContentDescription("Settings"),
+                allOf(withId(R.id.settingsButton), withContentDescription("Settings"),
                         childAtPosition(
                                 allOf(withId(R.id.my_tasks_image),
                                         childAtPosition(
