@@ -16,6 +16,7 @@ public class TaskmasterApplication extends Application {
         try {
             Amplify.addPlugin(new AWSApiPlugin());
             Amplify.configure(getApplicationContext());
+            Log.i(TAG, "Initialized Amplify");
         } catch (AmplifyException e) {
             Log.e(TAG, "Error during initialization of Amplify: " + e.getMessage(), e);
             e.printStackTrace();

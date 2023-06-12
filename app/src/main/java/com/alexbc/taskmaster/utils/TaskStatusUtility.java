@@ -1,12 +1,10 @@
 package com.alexbc.taskmaster.utils;
 
 
-import static com.alexbc.taskmaster.models.TaskStatus.ASSIGNED;
-import static com.alexbc.taskmaster.models.TaskStatus.COMPLETE;
-import static com.alexbc.taskmaster.models.TaskStatus.IN_PROGRESS;
 
-import com.alexbc.taskmaster.models.TaskStatus;
 
+
+import com.amplifyframework.datastore.generated.model.TaskStatus;
 
 import java.util.ArrayList;
 

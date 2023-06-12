@@ -1,6 +1,9 @@
 package com.alexbc.taskmaster;
 
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -9,22 +12,22 @@ import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
+
+import com.amplifyframework.api.graphql.model.ModelMutation;
+import com.amplifyframework.api.graphql.model.ModelQuery;
+import com.amplifyframework.core.Amplify;
+import com.amplifyframework.datastore.generated.model.Team;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.alexbc.taskmaster.activities.AddTaskActivity;
 import com.alexbc.taskmaster.activities.AllTaskActivity;
 import com.alexbc.taskmaster.activities.SettingsActivity;
 import com.alexbc.taskmaster.adapter.TaskListRecyclerViewAdapter;
-import com.alexbc.taskmaster.models.Task;
-import com.amplifyframework.api.graphql.model.ModelQuery;
-import com.amplifyframework.core.Amplify;
-import com.example.taskmaster.R;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.amplifyframework.datastore.generated.model.Task;
 
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -41,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        setupTasksFromDatabase();
+        setupTasksFromDatabase();
         setupSettingsButton();
         setupRecyclerView();
         setupAddTaskButton();
@@ -60,29 +63,29 @@ public class MainActivity extends AppCompatActivity {
             ((TextView) findViewById(R.id.my_tasks_title)).setText(myTasksTitleTextView);
         }
 
-//        setupTasksFromDatabase();
+        setupTasksFromDatabase();
         taskListRecyclerViewAdapter.updateTasksData(tasks);
     }
-//
-//    public void setupTasksFromDatabase() {
-//        preferences = PreferenceManager.getDefaultSharedPreferences(this);
-//        String currentTeam = preferences.getString(SettingsActivity.TEAM_TAG, "All");
-//        tasks.clear();
-//        Amplify.API.query(
-//                ModelQuery.list(Task.class),
-//                success -> {
-//                    Log.i(TAG, "Read Tasks successfully");
-//                    for (Task task : success.getData()) {
-//                        if (currentTeam.equals("All") || task.getTeam().getName().equals(currentTeam)) {
-//                            tasks.add(task);
-//                        }
-//                    }
-//                    runOnUiThread(() -> taskListRecyclerViewAdapter.notifyDataSetChanged());
-//                },
-//                failure -> Log.i(TAG, "Failed to read Tasks")
-//        );
-//
-//    }
+
+    public void setupTasksFromDatabase() {
+        preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        String currentTeam = preferences.getString(SettingsActivity.TEAM_TAG, "All");
+        tasks.clear();
+        Amplify.API.query(
+                ModelQuery.list(Task.class),
+                success -> {
+                    Log.i(TAG, "Read Tasks successfully");
+                    for (Task task : success.getData()) {
+                        if (currentTeam.equals("All") || task.getTeam().getName().equals(currentTeam)) {
+                            tasks.add(task);
+                        }
+                    }
+                    runOnUiThread(() -> taskListRecyclerViewAdapter.notifyDataSetChanged());
+                },
+                failure -> Log.i(TAG, "Failed to read Tasks")
+        );
+
+    }
 
     public void setupSettingsButton() {
         ((FloatingActionButton) findViewById(R.id.settingsButton)).setOnClickListener(v -> {

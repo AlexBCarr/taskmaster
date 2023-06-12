@@ -6,7 +6,7 @@
     "defaultAuthType": {
       "mode": "API_KEY",
       "expirationTime": 45,
-      "apiKeyExpirationDate": "2023-07-23T05:46:33.847Z",
+      "apiKeyExpirationDate": "2023-07-27T05:40:34.448Z",
       "keyDescription": "taskmaster API Key"
     },
     "conflictResolution": {},

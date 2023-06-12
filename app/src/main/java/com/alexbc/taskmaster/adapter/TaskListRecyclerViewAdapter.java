@@ -16,9 +16,9 @@ import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.alexbc.taskmaster.R;
 import com.alexbc.taskmaster.activities.TaskDetailActivity;
-import com.alexbc.taskmaster.models.Task;
-import com.example.taskmaster.R;
+import com.amplifyframework.datastore.generated.model.Task;
 
 
 import java.util.List;

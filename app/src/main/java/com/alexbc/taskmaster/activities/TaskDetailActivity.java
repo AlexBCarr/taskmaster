@@ -7,10 +7,10 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.alexbc.taskmaster.MainActivity;
-import com.alexbc.taskmaster.models.TaskStatus;
-import com.alexbc.taskmaster.utils.TaskStatusUtility;
+import com.alexbc.taskmaster.R;
 
-import com.example.taskmaster.R;
+import com.alexbc.taskmaster.utils.TaskStatusUtility;
+import com.amplifyframework.datastore.generated.model.TaskStatus;
 
 
 public class TaskDetailActivity extends AppCompatActivity {

@@ -1,72 +1,138 @@
 # this is an auto generated file. This will be overwritten
-mutation CreateTodo(
-  $input: CreateTodoInput!
-  $condition: ModelTodoConditionInput
+mutation CreateTask(
+  $input: CreateTaskInput!
+  $condition: ModelTaskConditionInput
 ) {
-  createTodo(input: $input, condition: $condition) {
+  createTask(input: $input, condition: $condition) {
     id
-    name
-    description
+    title
+    body
+    status
+    teamId
+    team {
+      id
+      name
+      tasks {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
     createdAt
     updatedAt
   }
 }
-mutation UpdateTodo(
-  $input: UpdateTodoInput!
-  $condition: ModelTodoConditionInput
+mutation UpdateTask(
+  $input: UpdateTaskInput!
+  $condition: ModelTaskConditionInput
 ) {
-  updateTodo(input: $input, condition: $condition) {
+  updateTask(input: $input, condition: $condition) {
     id
-    name
-    description
+    title
+    body
+    status
+    teamId
+    team {
+      id
+      name
+      tasks {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
     createdAt
     updatedAt
   }
 }
-mutation DeleteTodo(
-  $input: DeleteTodoInput!
-  $condition: ModelTodoConditionInput
+mutation DeleteTask(
+  $input: DeleteTaskInput!
+  $condition: ModelTaskConditionInput
 ) {
-  deleteTodo(input: $input, condition: $condition) {
+  deleteTask(input: $input, condition: $condition) {
     id
-    name
-    description
+    title
+    body
+    status
+    teamId
+    team {
+      id
+      name
+      tasks {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
     createdAt
     updatedAt
   }
 }
-mutation CreateProduct(
-  $input: CreateProductInput!
-  $condition: ModelProductConditionInput
+mutation CreateTeam(
+  $input: CreateTeamInput!
+  $condition: ModelTeamConditionInput
 ) {
-  createProduct(input: $input, condition: $condition) {
+  createTeam(input: $input, condition: $condition) {
     id
     name
-    price
+    tasks {
+      items {
+        id
+        title
+        body
+        status
+        teamId
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
     createdAt
     updatedAt
   }
 }
-mutation UpdateProduct(
-  $input: UpdateProductInput!
-  $condition: ModelProductConditionInput
+mutation UpdateTeam(
+  $input: UpdateTeamInput!
+  $condition: ModelTeamConditionInput
 ) {
-  updateProduct(input: $input, condition: $condition) {
+  updateTeam(input: $input, condition: $condition) {
     id
     name
-    price
+    tasks {
+      items {
+        id
+        title
+        body
+        status
+        teamId
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
     createdAt
     updatedAt
   }
 }
-mutation DeleteProduct(
-  $input: DeleteProductInput!
-  $condition: ModelProductConditionInput
+mutation DeleteTeam(
+  $input: DeleteTeamInput!
+  $condition: ModelTeamConditionInput
 ) {
-  deleteProduct(input: $input, condition: $condition) {
+  deleteTeam(input: $input, condition: $condition) {
     id
     name
-    price
+    tasks {
+      items {
+        id
+        title
+        body
+        status
+        teamId
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
     createdAt
     updatedAt
   }
