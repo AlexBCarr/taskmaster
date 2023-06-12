@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <application
+        android:name=".TaskmasterApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -13,19 +14,19 @@
         android:theme="@style/Theme.Taskmaster"
         tools:targetApi="31">
         <activity
-            android:name=".activities.TaskDetailActivity"
+            android:name="com.alexbc.taskmaster.activities.TaskDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.SettingsActivity"
+            android:name="com.alexbc.taskmaster.activities.SettingsActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.AllTaskActivity"
+            android:name="com.alexbc.taskmaster.activities.AllTaskActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.AddTaskActivity"
+            android:name="com.alexbc.taskmaster.activities.AddTaskActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.alexbc.taskmaster.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

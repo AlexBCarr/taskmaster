@@ -3,15 +3,15 @@ plugins {
 }
 
 android {
-    namespace 'com.example.taskmaster'
+    namespace 'com.alexbc.taskmaster'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.taskmaster"
+        applicationId "com.alexbc.taskmaster"
         minSdk 24
         targetSdk 33
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -29,6 +29,15 @@ android {
 }
 
 dependencies {
+
+    // Amplify core dependency
+    implementation 'com.amplifyframework:core:2.8.4'
+    implementation 'com.amplifyframework:aws-api:2.2.2'
+    implementation 'com.amplifyframework:aws-datastore:2.2.2'
+    implementation 'com.amplifyframework:aws-auth-cognito:2.8.4'
+
+    // Support for Java 8 features
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.1.5'
 
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.9.0'
