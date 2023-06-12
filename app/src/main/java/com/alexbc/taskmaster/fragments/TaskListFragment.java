@@ -34,8 +34,7 @@ public class TaskListFragment extends Fragment {
      */
     // TODO: Rename and change types and number of parameters
     public static TaskListFragment newInstance(String param1, String param2) {
-        TaskListFragment fragment = new TaskListFragment();
-        return fragment;
+        return new TaskListFragment();
     }
 
     @Override

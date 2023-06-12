@@ -3,6 +3,7 @@ package com.alexbc.taskmaster.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -15,6 +16,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.alexbc.taskmaster.activities.authentication.LoginActivity;
 import com.amplifyframework.api.graphql.model.ModelQuery;
 import com.amplifyframework.auth.AuthUser;
 import com.amplifyframework.auth.cognito.result.AWSCognitoAuthSignOutResult;
@@ -22,7 +24,7 @@ import com.amplifyframework.auth.options.AuthSignOutOptions;
 import com.amplifyframework.core.Amplify;
 import com.amplifyframework.datastore.generated.model.Team;
 import com.alexbc.taskmaster.R;
-//import com.alexbc.taskmaster.activities.authentication.LoginActivity;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,7 +48,7 @@ public class SettingsActivity extends AppCompatActivity {
         populateUsernameEditText(preferences);
         populateTeamSpinner(preferences);
         setupSaveButton(preferences);
-//        setUpLoginButton();
+        setUpLoginButton();
         setUpLogoutButton();
     }
 
@@ -144,13 +146,13 @@ public class SettingsActivity extends AppCompatActivity {
         });
     }
 
-//    public void setUpLoginButton() {
-//        Button loginButton = findViewById(R.id.userProfileActivityLoginButton);
-//        loginButton.setOnClickListener(v -> {
-//            Intent goToLoginActivity = new Intent(SettingsActivity.this, LoginActivity.class);
-//            startActivity(goToLoginActivity);
-//        });
-//    }
+    public void setUpLoginButton() {
+        Button loginButton = findViewById(R.id.userProfileActivityLoginButton);
+        loginButton.setOnClickListener(v -> {
+            Intent goToLoginActivity = new Intent(SettingsActivity.this, LoginActivity.class);
+            startActivity(goToLoginActivity);
+        });
+    }
 
     public void setUpLogoutButton() {
         Button logoutButton = findViewById(R.id.userProfileActivityLogoutButton);
