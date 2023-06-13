@@ -15,8 +15,20 @@ export type AmplifyDependentResourcesAttributes = {
   },
   "auth": {
     "taskmaster": {
+      "AppClientID": "string",
+      "AppClientIDWeb": "string",
       "IdentityPoolId": "string",
-      "IdentityPoolName": "string"
+      "IdentityPoolName": "string",
+      "UserPoolArn": "string",
+      "UserPoolId": "string",
+      "UserPoolName": "string"
+    }
+  },
+  "predictions": {
+    "speechGenerator93c5b550": {
+      "language": "string",
+      "region": "string",
+      "voice": "string"
     }
   }
 }

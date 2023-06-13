@@ -42,5 +42,12 @@
       "service": "Cognito",
       "serviceType": "managed"
     }
+  },
+  "predictions": {
+    "speechGenerator93c5b550": {
+      "convertType": "speechGenerator",
+      "providerPlugin": "awscloudformation",
+      "service": "Polly"
+    }
   }
 }
