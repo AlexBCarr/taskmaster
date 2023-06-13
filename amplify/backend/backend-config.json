@@ -1,4 +1,10 @@
 {
+  "analytics": {
+    "taskmaster": {
+      "providerPlugin": "awscloudformation",
+      "service": "Pinpoint"
+    }
+  },
   "api": {
     "taskmaster": {
       "dependsOn": [],
@@ -7,7 +13,7 @@
           "additionalAuthenticationProviders": [],
           "defaultAuthentication": {
             "apiKeyConfig": {
-              "apiKeyExpirationDate": "2023-07-27T05:40:34.448Z",
+              "apiKeyExpirationDate": "2023-07-28T01:08:54.632Z",
               "apiKeyExpirationDays": 45,
               "description": "taskmaster API Key"
             },
@@ -17,6 +23,24 @@
       },
       "providerPlugin": "awscloudformation",
       "service": "AppSync"
+    }
+  },
+  "auth": {
+    "taskmaster": {
+      "dependsOn": [],
+      "frontendAuthConfig": {
+        "mfaTypes": [],
+        "passwordProtectionSettings": {
+          "passwordPolicyCharacters": []
+        },
+        "signupAttributes": [],
+        "socialProviders": [],
+        "usernameAttributes": [],
+        "verificationMechanisms": []
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito",
+      "serviceType": "managed"
     }
   }
 }

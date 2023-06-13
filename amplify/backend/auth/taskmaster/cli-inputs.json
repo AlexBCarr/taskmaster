@@ -1,0 +1,12 @@
+{
+  "version": "1",
+  "cognitoConfig": {
+    "identityPoolName": "taskmaster_identitypool_46ddbf9c",
+    "allowUnauthenticatedIdentities": true,
+    "authSelections": "identityPoolOnly",
+    "resourceName": "taskmaster",
+    "sharedId": "46ddbf9c",
+    "serviceName": "Cognito",
+    "useDefault": "manual"
+  }
+}

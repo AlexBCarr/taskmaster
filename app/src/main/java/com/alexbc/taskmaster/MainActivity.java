@@ -13,7 +13,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 
-
+import com.amplifyframework.analytics.AnalyticsEvent;
 import com.amplifyframework.api.graphql.model.ModelMutation;
 import com.amplifyframework.api.graphql.model.ModelQuery;
 import com.amplifyframework.core.Amplify;
@@ -26,6 +26,7 @@ import com.alexbc.taskmaster.adapter.TaskListRecyclerViewAdapter;
 import com.amplifyframework.datastore.generated.model.Task;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 
@@ -43,6 +44,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        AnalyticsEvent openAppEvent = AnalyticsEvent.builder()
+                .name("openedApp")
+                .addProperty("time", Long.toString(new Date().getTime()))
+                .addProperty("trackingEvent", "main activity opened")
+                .build();
+
+        Amplify.Analytics.recordEvent(openAppEvent);
 
         setupTasksFromDatabase();
         setupSettingsButton();
